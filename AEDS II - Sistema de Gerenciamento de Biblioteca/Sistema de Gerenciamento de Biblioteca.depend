@@ -1,0 +1,189 @@
+# depslib dependency file v1.0
+1724725698 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\main.c
+	<stdio.h>
+	<stdlib.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaSequencial.h"
+	"buscaBinaria.h"
+	"SelectionSort.h"
+	"emprestimo.h"
+	"devolver.h"
+
+1724727394 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\usuarios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+
+1724724736 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\livros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+
+1724714336 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\livros.h
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<stdbool.h>
+
+1724714316 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\usuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<stdbool.h>
+
+1724722843 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\buscasequencial.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaSequencial.h"
+
+1724715079 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\buscasequencial.h
+
+1724723229 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\buscabinaria.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaBinaria.h"
+
+1724719549 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\buscabinaria.h
+
+1724723278 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\selectionsort.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"SelectionSort.h"
+
+1724715343 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\selectionsort.h
+
+1724725121 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\emprestimo.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"emprestimo.h"
+	"buscaSequencial.h"
+
+1724715543 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\emprestimo.h
+
+1724727180 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\devolver.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"devolver.h"
+	"buscaSequencial.h"
+
+1724716044 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca\devolver.h
+
+1724723229 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\buscabinaria.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaBinaria.h"
+
+1724714336 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\livros.h
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<stdbool.h>
+
+1724714316 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\usuarios.h
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<stdbool.h>
+
+1724719549 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\buscabinaria.h
+
+1724722843 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\buscasequencial.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaSequencial.h"
+
+1724715079 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\buscasequencial.h
+
+1724727180 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\devolver.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"devolver.h"
+	"buscaSequencial.h"
+
+1724716044 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\devolver.h
+
+1724725121 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\emprestimo.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"emprestimo.h"
+	"buscaSequencial.h"
+
+1724715543 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\emprestimo.h
+
+1724723278 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\selectionsort.c
+	<string.h>
+	<stdlib.h>
+	<stdarg.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+	"SelectionSort.h"
+
+1724715343 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\selectionsort.h
+
+1724728682 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\usuarios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+
+1724728205 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\livros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"livros.h"
+	"usuarios.h"
+
+1724728682 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\sistema de gerenciamento de biblioteca - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	"livros.h"
+	"usuarios.h"
+	"buscaSequencial.h"
+	"buscaBinaria.h"
+	"SelectionSort.h"
+	"emprestimo.h"
+	"devolver.h"
+

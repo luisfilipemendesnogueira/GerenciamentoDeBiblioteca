@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Sistema de Gerenciamento de Biblioteca" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Sistema de Gerenciamento de Biblioteca" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Sistema de Gerenciamento de Biblioteca" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="SelectionSort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="SelectionSort.h" />
+		<Unit filename="buscaBinaria.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="buscaBinaria.h" />
+		<Unit filename="buscaSequencial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="buscaSequencial.h" />
+		<Unit filename="devolver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="devolver.h" />
+		<Unit filename="emprestimo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="emprestimo.h" />
+		<Unit filename="livros.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="livros.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usuarios.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="usuarios.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
