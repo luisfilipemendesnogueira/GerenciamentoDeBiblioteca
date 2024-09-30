@@ -6,7 +6,7 @@
 #include <locale.h>
 #include <stdbool.h>
 
-typedef struct Livro TLivro;
+#include "livros.h"
 
 typedef struct Usuario{
     int id;
@@ -29,6 +29,9 @@ TUsuario* leUsuario(FILE *in);
 
 // Retorna tamanho do usuario em bytes
 int tamanho_registroUsuario();
+
+// Retorna a quantidade de registros no arquivo
+int tamanho_arquivoUsuario(FILE *arq);
 
 // Cria uma base de dados desordenada pelo ID do usuario
 void criarBaseDesordenadaUsuario(FILE *out, int tam);

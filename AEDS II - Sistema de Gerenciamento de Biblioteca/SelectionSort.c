@@ -68,10 +68,10 @@ void selection_sort_Usuario(FILE *arq, int tam){
 
         if(menor != i){
             fseek(arq, i * tamanho_registroUsuario(), SEEK_SET);
-            TLivro* old_i = leUsuario(arq);
+            TUsuario* old_i = leUsuario(arq);
 
             fseek(arq, menor * tamanho_registroUsuario(), SEEK_SET);
-            TLivro* new_i = leUsuario(arq);
+            TUsuario* new_i = leUsuario(arq);
 
             fseek(arq, i * tamanho_registroUsuario(), SEEK_SET);
             salvaUsuario(new_i, arq);

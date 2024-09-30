@@ -14,6 +14,11 @@ TLivro* busca_binaria(int chave, FILE *in, int inicio, int fim) {
     int id = -1;
     rewind(in);
 
+    if(chave > fim){
+        printf("\nLivro nao encontrado\n");
+        return NULL;
+    }
+
     while (inicio <= fim && id != chave) {
 
         int meio = trunc((inicio + fim) / 2);
@@ -45,6 +50,11 @@ TUsuario* busca_binaria_usuario(int chave, FILE *in, int inicio, int fim) {
     TUsuario *u = NULL;
     int id = -1;
     rewind(in);
+
+    if(chave > fim){
+        printf("\nUsuario nao encontrado\n");
+        return NULL;
+    }
 
     while (inicio <= fim && id != chave) {
 

@@ -56,6 +56,13 @@ int tamanho_registroUsuario() {
            + sizeof(TLivro) * 5; //livrosAssociados
 }
 
+// Retorna a quantidade de registros no arquivo
+int tamanho_arquivoUsuario(FILE *arq) {
+    fseek(arq, 0, SEEK_END);
+    int tam = trunc(ftell(arq) / tamanho_registroUsuario());
+    return tam;
+}
+
 // Cria uma base de dados desordenada pelo ID do usuario
 void criarBaseDesordenadaUsuario(FILE *out, int tam){
 

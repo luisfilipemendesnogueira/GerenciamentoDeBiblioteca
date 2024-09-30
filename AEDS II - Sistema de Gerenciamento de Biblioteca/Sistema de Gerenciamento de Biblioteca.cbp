@@ -51,6 +51,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="emprestimo.h" />
+		<Unit filename="intercalacao_otima.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="intercalacao_otima.h" />
+		<Unit filename="lista_livros.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lista_livros.h" />
+		<Unit filename="lista_usuarios.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lista_usuarios.h" />
 		<Unit filename="livros.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -58,6 +70,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="selecao_substituicao.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="selecao_substituicao.h" />
 		<Unit filename="usuarios.c">
 			<Option compilerVar="CC" />
 		</Unit>

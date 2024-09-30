@@ -78,6 +78,13 @@ int tamanho_registro() {
            + sizeof(TUsuario);
 }
 
+// Retorna a quantidade de registros no arquivo
+int tamanho_arquivo(FILE *arq) {
+    fseek(arq, 0, SEEK_END);
+    int tam = trunc(ftell(arq) / tamanho_registro());
+    return tam;
+}
+
 // Cria uma base de dados desordenada pelo ID do livro
 void criarBaseDesordenada(FILE *out, int tam){
 
@@ -121,7 +128,7 @@ void embaralha(int* vet,int tam) {
 
 //imprime a base de dados
 void imprimirBase(FILE *out){
-printf("\n\nImprimindo a base de dados...\n\n");
+    printf("\nImprimindo dados do arquivo...\n\n");
 
     rewind(out);
     TLivro* l;
@@ -180,4 +187,3 @@ void cadastrar_livro(FILE *arq, int *tamanho){
     salva(livro_novo, arq);
     free(livro_novo);
 }
-

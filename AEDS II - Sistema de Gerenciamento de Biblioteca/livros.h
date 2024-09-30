@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <stdbool.h>
 
 typedef struct Usuario TUsuario;
@@ -31,6 +30,9 @@ char* sufixo(int num);
 // Retorna tamanho do livro em bytes
 int tamanho_registro();
 
+// Retorna a quantidade de registros no arquivo
+int tamanho_arquivo(FILE *arq);
+
 // Cria uma base de dados desordenada pelo ID do livro
 void criarBaseDesordenada(FILE *out, int tam);
 
@@ -42,5 +44,11 @@ void imprimirBase(FILE *out);
 
 // Imprime livro
 void imprime(TLivro* livr);
+
+// embaralha uma base de dados de livros
+void embaralhaBase(TLivro **vet, int tam);
+
+//desordena a base de dados
+void desordenarBase(FILE *arq, int tam);
 
 #endif // LIVROS_H_INCLUDED
