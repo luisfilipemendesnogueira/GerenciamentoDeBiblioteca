@@ -6,7 +6,7 @@
 #include "usuarios.h"
 
 // Cria livro.
-TLivro* livro(int id, char* nome, char* autor, bool isEmprestado) {
+TLivro* livro(int id, char* nome, char* autor, bool isEmprestado, int prox, bool ocupado) {
     TLivro* livr = (TLivro *) malloc(sizeof(TLivro));
     //inicializa espaco de memoria com ZEROS
     if (livr) memset(livr, 0, sizeof(TLivro));
@@ -16,6 +16,8 @@ TLivro* livro(int id, char* nome, char* autor, bool isEmprestado) {
     strcpy(livr->autor, autor);
     livr->isEmprestado = isEmprestado;
     livr->usuarioAssociado = NULL;
+    livr->prox = prox;
+    livr->ocupado = ocupado;
     return livr;
 }
 
@@ -26,14 +28,16 @@ void salva(TLivro* livr, FILE *out) {
     fwrite(livr->nome, sizeof(char), sizeof(livr->nome), out);
     fwrite(livr->autor, sizeof(char), sizeof(livr->autor), out);
     fwrite(&livr->isEmprestado, sizeof(bool), 1, out);
-    // Verifica se o usu�rio associado n�o � NULL antes de salvar
+    // Verifica se o usuario associado nao eh NULL antes de salvar
     if (livr->usuarioAssociado != NULL) {
         fwrite(livr->usuarioAssociado, sizeof(TUsuario), 1, out);
     } else {
-        // Se n�o houver usu�rio associado, escreva um marcador
+        // Se nao houver usu�rio associado, escreva um marcador
         TUsuario usuarioNulo = {0};
         fwrite(&usuarioNulo, sizeof(TUsuario), 1, out);
     }
+    fwrite(&livr->prox, sizeof(int), 1, out);
+    fwrite(&livr->ocupado, sizeof(bool), 1, out);
 }
 
 // Le um livro do arquivo  na posicao atual do cursor
@@ -47,9 +51,11 @@ TLivro* le(FILE *in) {
     fread(livr->nome, sizeof(char), sizeof(livr->nome), in);
     fread(livr->autor, sizeof(char), sizeof(livr->autor), in);
     fread(&livr->isEmprestado, sizeof(bool), 1, in);
-    // Aloca mem�ria para o usu�rio associado e l� seus dados
+    // Aloca memoria para o usuario associado e le seus dados
     livr->usuarioAssociado = (TUsuario *) malloc(sizeof(TUsuario));
     fread(livr->usuarioAssociado, sizeof(TUsuario), 1, in);
+    fread(&livr->prox, sizeof(int), 1, in);
+    fread(&livr->ocupado, sizeof(bool), 1, in);
     return livr;
 }
 
@@ -75,7 +81,9 @@ int tamanho_registro() {
            + sizeof(char) * 50 //nome
            + sizeof(char) * 50 //autor
            + sizeof(bool) //isEmprestado
-           + sizeof(TUsuario);
+           + sizeof(TUsuario)
+           + sizeof(int)
+           + sizeof(bool);
 }
 
 // Retorna a quantidade de registros no arquivo
@@ -108,7 +116,7 @@ void criarBaseDesordenada(FILE *out, int tam){
         snprintf(nome, sizeof(nome), "%d%s Book", vetId[i], ordinal); // Transforma o ID em string e concatena as strings do id e do numero ordinal do id na String do nome do livro. (Ex: Se o id de um livro eh 5, o nome do livro sera "5th Book")
         snprintf(autor, sizeof(autor), "Mr. %d", vetId[i]); // Transforma o ID em string e concatena a string do id na String do autor do livro. (Ex: Se o id de um livro eh 47, seu nome sera "Mr. 47")
 
-        l = livro(vetId[i], nome, autor, false);
+        l = livro(vetId[i], nome, autor, false, -1, false);
         salva(l, out);
     }
 
@@ -128,13 +136,17 @@ void embaralha(int* vet,int tam) {
 
 //imprime a base de dados
 void imprimirBase(FILE *out){
-    printf("\nImprimindo dados do arquivo...\n\n");
+    printf("\nImprimindo dados do arquivo...");
 
     rewind(out);
     TLivro* l;
+    int cont = 0;
 
-    while ((l = le(out)) != NULL)
+    while ((l = le(out)) != NULL){
+        printf("\n\nPosicao %d\n", cont);
         imprime(l);
+        cont++;
+    }
 
     free(l);
 
@@ -164,6 +176,18 @@ void imprime(TLivro* livr) {
         }else{
             printf("Nao");
         }
+        printf("\nPosicao proximo no: ");
+        if(livr->prox != -1){
+            printf("%d", livr->prox /= tamanho_registro());
+        } else{
+            printf("%d", livr->prox);
+        }
+        printf("\nOcupado?: ");
+        if(livr->ocupado){
+            printf("Sim");
+        }else{
+            printf("Nao");
+        }
         printf("\n**********************************************");
     }
 }
@@ -176,13 +200,17 @@ void cadastrar_livro(FILE *arq, int *tamanho){
 
     livro_novo->id = *tamanho;
     printf("\nDigite o nome do livro: ");
-    scanf("%s", livro_novo->nome);
+    fgets(livro_novo->nome, sizeof(livro_novo->nome), stdin);
+    livro_novo->nome[strcspn(livro_novo->nome, "\n")] = '\0'; // Remove o '\n' do final
     fflush(stdin);
     printf("\nDigite o nome do autor do livro: ");
-    scanf("%s", livro_novo->autor);
+    fgets(livro_novo->autor, sizeof(livro_novo->autor), stdin);
+    livro_novo->autor[strcspn(livro_novo->autor, "\n")] = '\0'; // Remove o '\n' do final
 
     livro_novo->isEmprestado = false;
     livro_novo->usuarioAssociado = NULL;
+    livro_novo->prox = -1;
+    livro_novo->ocupado = false;
 
     salva(livro_novo, arq);
     free(livro_novo);

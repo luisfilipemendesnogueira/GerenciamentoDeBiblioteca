@@ -187,7 +187,7 @@
 	"emprestimo.h"
 	"devolver.h"
 
-1724723229 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\buscabinaria.c
+1726764046 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\buscabinaria.c
 	<string.h>
 	<stdlib.h>
 	<stdarg.h>
@@ -196,20 +196,17 @@
 	"usuarios.h"
 	"buscaBinaria.h"
 
-1725750263 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\livros.h
-	<stdio.h>
-	<stdlib.h>
-	<locale.h>
-	<stdbool.h>
+1727790185 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\livros.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 
-1724714316 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\usuarios.h
+1725760912 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\usuarios.h
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	<stdbool.h>
+	"livros.h"
 
 1724719549 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\buscabinaria.h
 
@@ -248,14 +245,14 @@
 
 1724715543 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\emprestimo.h
 
-1725758097 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\livros.c
+1727929275 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\livros.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"livros.h"
 	"usuarios.h"
 
-1725758227 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\main.c
+1727985273 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\main.c
 	<stdio.h>
 	<stdlib.h>
 	"livros.h"
@@ -267,10 +264,11 @@
 	"devolver.h"
 	"selecao_substituicao.h"
 	"intercalacao_otima.h"
+	"tabela_hash.h"
 
 1724715343 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\selectionsort.h
 
-1724728682 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\usuarios.c
+1725760940 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\usuarios.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -286,7 +284,7 @@
 	"usuarios.h"
 	"SelectionSort.h"
 
-1725757550 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\intercalacao_otima.c
+1727799042 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\intercalacao_otima.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -294,6 +292,7 @@
 	"usuarios.h"
 	"intercalacao_otima.h"
 	"lista_livros.h"
+	"lista_usuarios.h"
 
 1725750082 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\lista_livros.c
 	<stdio.h>
@@ -302,9 +301,15 @@
 	"livros.h"
 	"lista_livros.h"
 
-1725752191 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\lista_usuarios.c
+1725760545 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\lista_usuarios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"usuarios.h"
+	"livros.h"
+	"lista_usuarios.h"
 
-1725757039 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\selecao_substituicao.c
+1726778801 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\selecao_substituicao.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -312,9 +317,9 @@
 	"usuarios.h"
 	"selecao_substituicao.h"
 
-1725749961 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\selecao_substituicao.h
+1725760817 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\selecao_substituicao.h
 
-1725749840 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\intercalacao_otima.h
+1725761060 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\intercalacao_otima.h
 
 1725750099 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\lista_livros.h
 	"livros.h"
@@ -457,4 +462,15 @@
 
 1725760647 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca - copia (2)\lista_usuarios.h
 	"usuarios.h"
+
+1725760647 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\lista_usuarios.h
+	"usuarios.h"
+
+1727985136 source:c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\tabela_hash.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"livros.h"
+
+1727752704 c:\users\luisf\onedrive\햞ea de trabalho\aeds ii\aeds ii - sistema de gerenciamento de biblioteca\tabela_hash.h
 

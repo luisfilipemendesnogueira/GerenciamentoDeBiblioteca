@@ -10,11 +10,13 @@
 #include "devolver.h"
 #include "selecao_substituicao.h"
 #include "intercalacao_otima.h"
+#include "tabela_hash.h"
 
 int main()
 {
     FILE *arq;
     FILE *arqU;
+    FILE *tab;
 
     TLivro* l;
     TUsuario* u;
@@ -22,7 +24,11 @@ int main()
     int qtdParticoes = 0;
     int M = 0;
     int tamanhoLivro = 50, tamanhoUsuario = 50;
+    int tamanhoOriginalLivro = tamanhoLivro;
     bool isLivroOrdenado, isUsuarioOrdenado = false;
+    bool isTabelaCriada = false;
+    int m = 0;
+    int id = 0;
 
     if ((arq = fopen("livro.dat", "w+b")) == NULL) {
         printf("Erro ao abrir arquivo\n");
@@ -34,9 +40,16 @@ int main()
         exit(1);
     }
 
+    if ((tab = fopen("tabHash.dat", "w+b")) == NULL) {
+        printf("Erro ao abrir arquivo\n");
+        exit(1);
+    }
+
     else{
         criarBaseDesordenada(arq, tamanhoLivro);
         criarBaseDesordenadaUsuario(arqU, tamanhoUsuario);
+        imprimirBase(arq);
+        printf("\n");
 
         while(escolha != 7){
             escolha = ler_inteiro("\n| Bem-vindo, o que voce deseja?:\n| 1 - Consultar as informacoes de um livro pelo seu ID\n| 2 - Consultar as informacoes de um usuario pelo seu ID\n| 3 - Registrar emprestimo de livro\n| 4 - Registrar devolucao de livro\n| 5 - Cadastrar um livro novo\n| 6 - Cadastrar um usuario novo\n| 7 - Sair.\n\nEscolha: ");
@@ -44,14 +57,14 @@ int main()
             switch(escolha){
                 case 1:
                     escolha = 0;
-                    while(escolha != 3){
-                        escolha = ler_inteiro("\n| Deseja que tipo de base de dados para realizar a busca?\n| 1 - Ordenada\n| 2 - Desordenada\n| 3 - Sair\n\nEscolha: ");
+                    while(escolha != 4){
+                        escolha = ler_inteiro("\n| Deseja que tipo de base de dados para realizar a busca?\n| 1 - Ordenada\n| 2 - Desordenada\n| 3 - Tabela Hash (Metodo da Divisao e Encadeamento Exterior)\n| 4 - Sair\n\nEscolha: ");
                         printf("\n");
                         switch(escolha){
                             case 1:
                                 opcao = 0;
                                 while(opcao != 3){
-                                    opcao = ler_inteiro("\n| Qual o modelo de odernacao?\n| 1 - Ordenacao interna\n| 2 - Ordenacao Externa\n| 3 - Sair\n\nEscolha: ");
+                                    opcao = ler_inteiro("\n| Qual o modelo de odernacao?\n| 1 - Ordenacao Interna\n| 2 - Ordenacao Externa\n| 3 - Sair\n\nEscolha: ");
                                     printf("\n");
                                     switch(opcao){
                                         case 1:
@@ -153,6 +166,64 @@ int main()
                                 }
                                 break;
                             case 3:
+                                escolha = 0;
+                                while(escolha != 7){
+                                    if(isTabelaCriada == false){
+                                        isTabelaCriada = true;
+                                        while(m <= 1){
+                                            m = ler_inteiro("\nDigite o comprimento m da tabela hash: ");
+                                            printf("\n");
+                                            if (m <= 1){
+                                                printf("Comprimento Invalido\n");
+                                            }
+                                        }
+                                        inicializaTabHash(tab, m);
+                                    }
+                                    escolha = ler_inteiro("\n| Deseja realizar qual tipo de operacao?\n| 1 - Inserir a Base de Dados na tabela hash\n| 2 - Buscar elemento da tabela hash\n| 3 - Inserir elemento na tabela hash\n| 4 - Remover Elemento da tabela hash\n| 5 - Imprimir Tabela Hash\n| 6 - Imprimir Base de Dados\n| 7 - Sair\n\nEscolha: ");
+                                    printf("\n");
+                                    TLivro *novoLivro;
+                                    TLivro *buscaLivro;
+                                    switch(escolha){
+                                        case 1:
+                                            inserir_base_hash(tab, arq, m, tamanhoLivro, tamanhoOriginalLivro);
+                                            break;
+                                        case 2:
+                                            printf("Digite o id do Livro que voce deseja procurar: ");
+                                            scanf("%d", &id);
+                                            buscaLivro = busca_hash(tab, arq, m, id);
+                                            imprime(buscaLivro);
+                                            free(buscaLivro);
+                                            printf("\n");
+                                            break;
+                                        case 3:
+                                            cadastrar_livro(arq, &tamanhoLivro);
+                                            printf("\n");
+                                            fseek(arq, (tamanhoLivro-1) * tamanho_registro(), SEEK_SET);
+                                            novoLivro = le(arq);
+                                            inserir_hash(tab, arq, m, novoLivro, tamanhoOriginalLivro);
+                                            free(novoLivro);
+                                            break;
+                                        case 4:
+                                            printf("Digite o id do Livro que voce deseja remover: ");
+                                            scanf("%d", &id);
+                                            remover_hash(tab, arq, m, id);
+                                            break;
+                                        case 5:
+                                            imprimir_tabela_hash(tab, arq);
+                                            break;
+                                        case 6:
+                                            imprimirBase(arq);
+                                            printf("\n");
+                                            break;
+                                        case 7:
+                                            break;
+                                        default:
+                                            printf("Opcao invalida\n");
+                                            break;
+                                    }
+                                }
+                                break;
+                            case 4:
                                 break;
                             default:
                                 printf("Opcao invalida\n");

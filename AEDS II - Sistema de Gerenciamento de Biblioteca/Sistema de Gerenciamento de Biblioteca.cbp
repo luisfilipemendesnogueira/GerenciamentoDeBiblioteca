@@ -74,6 +74,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="selecao_substituicao.h" />
+		<Unit filename="tabela_hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tabela_hash.h" />
 		<Unit filename="usuarios.c">
 			<Option compilerVar="CC" />
 		</Unit>

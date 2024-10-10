@@ -177,7 +177,7 @@ void intercalar(FILE *out, int num_p) {
 
             // Se nao houver livros (o arquivo esta vazio), insere um valor alto (INT_MAX).
             if (l == NULL) {
-                v[i].livr = livro(INT_MAX, "", "", false); // Sinaliza fim do arquivo com "valor alto".
+                v[i].livr = livro(INT_MAX, "", "", false, -1, false); // Sinaliza fim do arquivo com "valor alto".
             } else {
                 v[i].livr = l; // Caso contrario, armazena o livro no vetor.
             }
@@ -213,7 +213,7 @@ void intercalar(FILE *out, int num_p) {
 
             // Se o proximo livro for NULL, o arquivo acabou, entao insere um valor alto (INT_MAX).
             if (l == NULL) {
-                v[pos_menor].livr = livro(INT_MAX, "", "", false); // Marca o fim do arquivo.
+                v[pos_menor].livr = livro(INT_MAX, "", "", false, -1, false); // Marca o fim do arquivo.
             } else {
                 v[pos_menor].livr = l; // Atualiza o vetor com o proximo livro.
             }

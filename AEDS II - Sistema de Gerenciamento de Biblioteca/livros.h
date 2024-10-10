@@ -13,10 +13,12 @@ typedef struct Livro{
     char autor[50];
     bool isEmprestado;
     TUsuario* usuarioAssociado;
+    int prox;
+    bool ocupado;
 }TLivro;
 
 // Cria livro.
-TLivro* livro(int id, char* nome, char* autor, bool isEmprestado);
+TLivro* livro(int id, char* nome, char* autor, bool isEmprestado, int prox, bool ocupado);
 
 // Salva livro no arquivo out, na posicao atual do cursor
 void salva(TLivro* livr, FILE *out);
